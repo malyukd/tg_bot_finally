@@ -1,5 +1,4 @@
 from aiogram import types
-from aiogram.utils.keyboard import InlineKeyboardBuilder, InlineKeyboardButton, InlineKeyboardMarkup
 
 
 def get_main_keyboard():
@@ -32,6 +31,14 @@ def get_back_keyboard():
 def get_raspisanie_back_keyboard():
     back_keyboard = [
         [types.InlineKeyboardButton(text="Назад", callback_data="raspisanie_over")]
+    ]
+    keybord_back = types.InlineKeyboardMarkup(inline_keyboard=back_keyboard)
+    return keybord_back
+
+
+def get_ostanovka_back_keyboard():
+    back_keyboard = [
+        [types.InlineKeyboardButton(text="Назад", callback_data="ostanovka_over")]
     ]
     keybord_back = types.InlineKeyboardMarkup(inline_keyboard=back_keyboard)
     return keybord_back
@@ -89,6 +96,31 @@ def get_raspisanie_keyboard():
     ]
     keybord_razvozka = types.InlineKeyboardMarkup(inline_keyboard=razvozka_keyboard)
     return keybord_razvozka
+
+def get_ostanovki_keyboard():
+    razvozka_keyboard = [
+        [
+            types.InlineKeyboardButton(text="м. Гражданский проспект", callback_data="o1")
+        ],
+        [
+            types.InlineKeyboardButton(text="м. Коменданский проспект", callback_data="o2")
+        ],
+        [
+            types.InlineKeyboardButton(text="Индустриальный проспект (ТЦ Июнь)", callback_data="o3")
+        ],
+        [
+            types.InlineKeyboardButton(text="м. Площадь мужества", callback_data="o4")
+        ],
+        [
+            types.InlineKeyboardButton(text="м. Проспект просвещения", callback_data="o5")
+        ],
+        [
+            types.InlineKeyboardButton(text="Назад", callback_data="razvozka")
+        ]
+    ]
+    keybord_razvozka = types.InlineKeyboardMarkup(inline_keyboard=razvozka_keyboard)
+    return keybord_razvozka
+
 
 
 def get_money_keyboard():

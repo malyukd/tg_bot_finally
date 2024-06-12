@@ -5,6 +5,7 @@ from app.handlers.start import router_start
 from app.handlers.razvozka import router_razvozka
 from app.handlers.money import router_money
 from app.handlers.sport import router_sport
+from app.handlers.ostanovki import router_ostanovki
 from config import TOKEN
 from aiogram import Dispatcher
 from aiogram import Bot
@@ -21,6 +22,7 @@ async def main():
     dp.include_router(router_razvozka)
     dp.include_router(router_money)
     dp.include_router(router_sport)
+    dp.include_router(router_ostanovki)
 
     await dp.start_polling(bot)
 

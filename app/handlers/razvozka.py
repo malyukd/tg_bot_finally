@@ -1,8 +1,3 @@
-import asyncio
-import logging
-from aiogram import Bot, Dispatcher, types
-from aiogram.filters.command import Command
-from aiogram.utils.keyboard import InlineKeyboardBuilder
 from aiogram import Router, F
 from app.keyboards import *
 from app.images import file_ids
@@ -25,7 +20,7 @@ async def raspisanie(callback: types.CallbackQuery):
     await callback.message.edit_text(
         str("В случае возникновения вопросов, связанных с временем подачи автобусов, телефоны для связи с "
             "диспетчерами организации-перевозчика: \n📞Екатерина:  +7 (921) 868-68-88\n📞Виктор:  +7 (921) "
-            "868-68-86"), reply_markup=get_raspisanie_keyboard())
+            "868-68-86\n\nВыберете интересующий вас маршрут:"), reply_markup=get_raspisanie_keyboard())
 
 
 @router_razvozka.callback_query(F.data == "raspisanie_over")
@@ -34,7 +29,7 @@ async def raspisanie_over(callback: types.CallbackQuery):
     await callback.message.answer(
         str("В случае возникновения вопросов, связанных с временем подачи автобусов, телефоны для связи с "
             "диспетчерами организации-перевозчика: \n📞Екатерина:  +7 (921) 868-68-88\n📞Виктор:  +7 (921) "
-            "868-68-86"), reply_markup=get_raspisanie_keyboard())
+            "868-68-86\n\nВыберете интересующий вас маршрут:"), reply_markup=get_raspisanie_keyboard())
 
 
 @router_razvozka.callback_query(F.data == "r1")
