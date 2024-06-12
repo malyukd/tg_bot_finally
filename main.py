@@ -1,6 +1,6 @@
 import asyncio
 import logging
-from app.handlers import start
+from app.handlers.handlers import start
 from config import TOKEN
 from aiogram import Dispatcher
 from aiogram import Bot
