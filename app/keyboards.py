@@ -59,6 +59,13 @@ def get_sport_keyboard():
     keybord_sport = types.InlineKeyboardMarkup(inline_keyboard=sport_keyboard)
     return keybord_sport
 
+def get_back_sport():
+    back_keyboard = [
+        [types.InlineKeyboardButton(text="Назад", callback_data="sport")]
+    ]
+    keybord_back = types.InlineKeyboardMarkup(inline_keyboard=back_keyboard)
+    return keybord_back
+
 
 def get_razvozka_keyboard():
     razvozka_keyboard = [
@@ -139,3 +146,10 @@ def get_money_keyboard():
     ]
     keybord_money = types.InlineKeyboardMarkup(inline_keyboard=money_keyboard)
     return keybord_money
+
+def get_back_money():
+    back_keyboard = [
+        [types.InlineKeyboardButton(text="Назад", callback_data="money")]
+    ]
+    keybord_back = types.InlineKeyboardMarkup(inline_keyboard=back_keyboard)
+    return keybord_back
