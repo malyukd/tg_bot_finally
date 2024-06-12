@@ -29,6 +29,13 @@ def get_back_keyboard():
     keybord_back = types.InlineKeyboardMarkup(inline_keyboard=back_keyboard)
     return keybord_back
 
+def get_raspisanie_back_keyboard():
+    back_keyboard = [
+        [types.InlineKeyboardButton(text="Назад", callback_data="raspisanie_over")]
+    ]
+    keybord_back = types.InlineKeyboardMarkup(inline_keyboard=back_keyboard)
+    return keybord_back
+
 
 def get_sport_keyboard():
     sport_keyboard = [
