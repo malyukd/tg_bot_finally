@@ -7,6 +7,7 @@ from aiogram import Router, F
 
 router = Router()
 
+
 @router.message(Command("start"))
 async def start(message: types.Message):
     builder = InlineKeyboardBuilder()
