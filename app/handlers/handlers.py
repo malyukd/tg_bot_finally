@@ -3,11 +3,12 @@ import logging
 from aiogram import Bot, Dispatcher, types
 from aiogram.filters.command import Command
 from aiogram.utils.keyboard import InlineKeyboardBuilder
-from aiogram import F
+from aiogram import Router, F
 
+router = Router()
 
-@dp.message(Command("start"))
-async def cmd_random(message: types.Message):
+@router.message(Command("start"))
+async def start(message: types.Message):
     builder = InlineKeyboardBuilder()
     builder.add(types.InlineKeyboardButton(
         text="Нажми меня",
@@ -22,7 +23,7 @@ async def cmd_random(message: types.Message):
     )
 
 
-@dp.callback_query(F.data == "documents")
+@router.callback_query(F.data == "documents")
 async def documents(callback: types.CallbackQuery):
     builder = InlineKeyboardBuilder()
     builder.add(types.InlineKeyboardButton(
@@ -41,7 +42,7 @@ async def documents(callback: types.CallbackQuery):
     await callback.message.edit_reply_markup(reply_markup=builder.as_markup())
 
 
-@dp.callback_query(F.data == "dms")
+@router.callback_query(F.data == "dms")
 async def dms(callback: types.CallbackQuery):
     builder = InlineKeyboardBuilder()
     builder.add(types.InlineKeyboardButton(
@@ -55,7 +56,7 @@ async def dms(callback: types.CallbackQuery):
     await callback.message.edit_reply_markup(reply_markup=builder.as_markup())
 
 
-@dp.callback_query(F.data == "razvozka")
+@router.callback_query(F.data == "razvozka")
 async def razvozka(callback: types.CallbackQuery):
     builder = InlineKeyboardBuilder()
     builder.add(types.InlineKeyboardButton(
@@ -70,7 +71,7 @@ async def razvozka(callback: types.CallbackQuery):
     await callback.message.edit_reply_markup(reply_markup=builder.as_markup())
 
 
-@dp.callback_query(F.data == "sport")
+@router.callback_query(F.data == "sport")
 async def sport(callback: types.CallbackQuery):
     builder = InlineKeyboardBuilder()
     builder.add(types.InlineKeyboardButton(
@@ -85,7 +86,7 @@ async def sport(callback: types.CallbackQuery):
     await callback.message.edit_reply_markup(reply_markup=builder.as_markup())
 
 
-@dp.callback_query(F.data == "sportkomp")
+@router.callback_query(F.data == "sportkomp")
 async def sportkomp(callback: types.CallbackQuery):
     builder = InlineKeyboardBuilder()
     builder.add(types.InlineKeyboardButton(
@@ -98,7 +99,7 @@ async def sportkomp(callback: types.CallbackQuery):
     await callback.message.edit_reply_markup(reply_markup=builder.as_markup())
 
 
-@dp.callback_query(F.data == "korsport")
+@router.callback_query(F.data == "korsport")
 async def korsport(callback: types.CallbackQuery):
     builder = InlineKeyboardBuilder()
     builder.add(types.InlineKeyboardButton(
@@ -111,7 +112,7 @@ async def korsport(callback: types.CallbackQuery):
     await callback.message.edit_reply_markup(reply_markup=builder.as_markup())
 
 
-@dp.callback_query(F.data == "money")
+@router.callback_query(F.data == "money")
 async def money(callback: types.CallbackQuery):
     builder = InlineKeyboardBuilder()
     builder.add(types.InlineKeyboardButton(
@@ -127,7 +128,7 @@ async def money(callback: types.CallbackQuery):
     await callback.message.edit_reply_markup(reply_markup=builder.as_markup())
 
 
-@dp.callback_query(F.data == "money1")
+@router.callback_query(F.data == "money1")
 async def money1(callback: types.CallbackQuery):
     builder = InlineKeyboardBuilder()
     builder.add(types.InlineKeyboardButton(
@@ -146,7 +147,7 @@ async def money1(callback: types.CallbackQuery):
     await callback.message.edit_reply_markup(reply_markup=builder.as_markup())
 
 
-@dp.callback_query(F.data == "money2")
+@router.callback_query(F.data == "money2")
 async def money2(callback: types.CallbackQuery):
     builder = InlineKeyboardBuilder()
     builder.add(types.InlineKeyboardButton(
@@ -162,7 +163,7 @@ async def money2(callback: types.CallbackQuery):
     await callback.message.edit_reply_markup(reply_markup=builder.as_markup())
 
 
-@dp.callback_query(F.data == "money3")
+@router.callback_query(F.data == "money3")
 async def money3(callback: types.CallbackQuery):
     builder = InlineKeyboardBuilder()
     builder.add(types.InlineKeyboardButton(
@@ -175,7 +176,7 @@ async def money3(callback: types.CallbackQuery):
     await callback.message.edit_reply_markup(reply_markup=builder.as_markup())
 
 
-@dp.callback_query(F.data == "money4")
+@router.callback_query(F.data == "money4")
 async def money4(callback: types.CallbackQuery):
     builder = InlineKeyboardBuilder()
     builder.add(types.InlineKeyboardButton(
@@ -191,7 +192,7 @@ async def money4(callback: types.CallbackQuery):
     await callback.message.edit_reply_markup(reply_markup=builder.as_markup())
 
 
-@dp.callback_query(F.data == "study")
+@router.callback_query(F.data == "study")
 async def study(callback: types.CallbackQuery):
     builder = InlineKeyboardBuilder()
     builder.add(types.InlineKeyboardButton(
