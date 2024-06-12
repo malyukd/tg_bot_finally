@@ -62,6 +62,28 @@ def get_razvozka_keyboard():
     return keybord_razvozka
 
 
+def get_raspisanie_keyboard():
+    razvozka_keyboard = [
+        [
+            types.InlineKeyboardButton(text="к производственной площадке «Ручьи»", callback_data="r1")
+        ],
+        [
+            types.InlineKeyboardButton(text="от производственной площадки «Ручьи»", callback_data="r2")
+        ],
+        [
+            types.InlineKeyboardButton(text="к производственной площадке «Юлмарт»", callback_data="r3")
+        ],
+        [
+            types.InlineKeyboardButton(text="от производственной площадки «Юлмарт»", callback_data="r4")
+        ],
+        [
+            types.InlineKeyboardButton(text="Назад", callback_data="razvozka")
+        ]
+    ]
+    keybord_razvozka = types.InlineKeyboardMarkup(inline_keyboard=razvozka_keyboard)
+    return keybord_razvozka
+
+
 def get_money_keyboard():
     money_keyboard = [
         [

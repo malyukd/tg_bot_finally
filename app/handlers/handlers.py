@@ -63,6 +63,14 @@ async def razvozka(callback: types.CallbackQuery):
             "предприятия. \n\nС дополнительной информацией можете ознакомиться через меню."), reply_markup=get_razvozka_keyboard())
 
 
+@router.callback_query(F.data == "raspisanie")
+async def raspisanie(callback: types.CallbackQuery):
+    await callback.message.edit_text(
+        str("В случае возникновения вопросов, связанных с временем подачи автобусов, телефоны для связи с "
+            "диспетчерами организации-перевозчика: \n📞Екатерина:  +7 (921) 868-68-88\n📞Виктор:  +7 (921) "
+            "868-68-86"), reply_markup=get_raspisanie_keyboard())
+
+
 @router.callback_query(F.data == "sport")
 async def sport(callback: types.CallbackQuery):
     await callback.message.edit_text(
