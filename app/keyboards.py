@@ -13,7 +13,7 @@ def get_main_keyboard():
             types.InlineKeyboardButton(text="Спорт", callback_data="sport"),
         ],
         [
-            types.InlineKeyboardButton(text="Финансы", callback_data="money"),
+            types.InlineKeyboardButton(text="Выплаты", callback_data="money"),
             types.InlineKeyboardButton(text="Обучение", callback_data="study"),
         ]
     ]
